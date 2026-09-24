@@ -22,8 +22,12 @@ public class MorseCode {
         put("Q", "--.-");
         put("R", ".-.");
         put("S", "...");
-        put("S", "...");
-        put("S", "...");
+        put("T", "-");
+        put("V", "...-");
+        put("W", ".--");
+        put("X", "-..-");
+        put("Y", "-.--");
+        put("Z", "--..");
     }};
 
     public static String Decrypt(String code) {

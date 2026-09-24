@@ -46,7 +46,7 @@ public class TestMorse {
         var word = "Hello World";
         var code = MorseCode.Encrypt(word);
 
-        assertEquals(".... . .-.. .-.. --- _ --- .-. .-.. -..", code);
+        assertEquals(".... . .-.. .-.. --- .-- --- .-. .-.. -..", code);
     }
 
     @Test 
@@ -54,7 +54,7 @@ public class TestMorse {
         var word = "Hellå Wörld";
         var code = MorseCode.Encrypt(word);
 
-        assertEquals(".... . .-.. .-.. _ _ _ .-. .-.. -..", code);
+        assertEquals(".... . .-.. .-.. _ .-- _ .-. .-.. -..", code);
     }
     @Test 
     public void testWrongCode(){
