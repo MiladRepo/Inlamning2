@@ -24,6 +24,15 @@ public class TestMorse {
     }
 
     @Test 
+    public void testFromSmallLetter(){
+        
+        var letter = "a";
+        var morseCode = MorseCode.Encrypt(letter);
+
+        assertEquals(".-", morseCode);
+    }
+
+    @Test 
     public void testCodeToWord(){
 
         var code = ".... . .---";
