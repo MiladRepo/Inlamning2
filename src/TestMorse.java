@@ -8,8 +8,8 @@ public class TestMorse {
     @Test
     public void testFromMorseCode(){
 
-        var code = ".-";
-        var letter = MorseCode.Decrypt(code);
+        String code = ".-";
+        String letter = MorseCode.Decrypt(code);
 
         assertEquals("A", letter);
     }
@@ -17,8 +17,8 @@ public class TestMorse {
     @Test 
     public void testFromLetter(){
         
-        var letter = "A";
-        var morseCode = MorseCode.Encrypt(letter);
+        String letter = "A";
+        String morseCode = MorseCode.Encrypt(letter);
 
         assertEquals(".-", morseCode);
     }
@@ -26,8 +26,8 @@ public class TestMorse {
     @Test 
     public void testFromSmallLetter(){
         
-        var letter = "a";
-        var morseCode = MorseCode.Encrypt(letter);
+        String letter = "a";
+        String morseCode = MorseCode.Encrypt(letter);
 
         assertEquals(".-", morseCode);
     }
@@ -35,8 +35,8 @@ public class TestMorse {
     @Test 
     public void testCodeToWord(){
 
-        var code = ".... . .---";
-        var word = MorseCode.Decrypt(code);
+        String code = ".... . .---";
+        String word = MorseCode.Decrypt(code);
 
         assertEquals("HEJ", word);
     }
@@ -44,31 +44,31 @@ public class TestMorse {
     @Test 
     public void testWordToCode(){
 
-        var word = "Hej";
-        var code = MorseCode.Encrypt(word);
+        String word = "Hej";
+        String code = MorseCode.Encrypt(word);
 
         assertEquals(".... . .---", code);
     }
 
     @Test 
     public void testLongWordToCode(){
-        var word = "Hello World";
-        var code = MorseCode.Encrypt(word);
+        String word = "Hello World";
+        String code = MorseCode.Encrypt(word);
 
         assertEquals(".... . .-.. .-.. --- .-- --- .-. .-.. -..", code);
     }
 
     @Test 
     public void testWrongLetters(){
-        var word = "Hellå Wörld";
-        var code = MorseCode.Encrypt(word);
+        String word = "Hellå Wörld";
+        String code = MorseCode.Encrypt(word);
 
         assertEquals(".... . .-.. .-.. _ .-- _ .-. .-.. -..", code);
     }
     @Test 
     public void testWrongCode(){
-        var code = "..-- . .----";
-        var word = MorseCode.Decrypt(code);
+        String code = "..-- . .----";
+        String word = MorseCode.Decrypt(code);
 
         assertEquals("_E_", word);
     }

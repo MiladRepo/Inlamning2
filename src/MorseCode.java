@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map.Entry;
 
 public class MorseCode {
     private static HashMap<String, String> _map = new HashMap<String, String>(){{
@@ -19,14 +20,14 @@ public class MorseCode {
 
     public static String Decrypt(String code) {
 
-        var word = "";
-        var splitted = code.split(" ");
+        String word = "";
+        String[] splitted = code.split(" ");
         for (int i = 0; i < splitted.length; i++) {
             if(!_map.containsValue(splitted[i])){
                     word += "_";
                     continue;
                 }
-            for (var item : _map.entrySet()) {
+            for (Entry<String, String> item : _map.entrySet()) {
                 if(item.getValue().equals(splitted[i])){
                     word += item.getKey();
                     continue;
@@ -38,8 +39,8 @@ public class MorseCode {
 
     public static String Encrypt(String text) {
 
-        var code = "";
-        var splitted = text.replace(" ", "").toUpperCase().split("");
+        String code = "";
+        String[] splitted = text.replace(" ", "").toUpperCase().split("");
         for (int i = 0; i < splitted.length; i++) {  
             if(_map.containsKey(splitted[i])){
                 code += _map.get(splitted[i]) + " ";
